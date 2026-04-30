@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AxoSMP – Minecraft Server</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c14;
+    --bg2: #0d1520;
+    --panel: #0f1c2e;
+    --border: #1a3050;
+    --accent: #00c8ff;
+    --accent2: #0ef0a0;
+    --accent3: #ff6b35;
+    --text: #c8dff0;
+    --text-dim: #5a7a99;
+    --owner: #ff4d4d;
+    --jrowner: #ff884d;
+    --manager: #ffcc00;
+    --srdev: #a855f7;
+    --dev: #818cf8;
+    --admin: #ef4444;
+    --srmod: #22d3ee;
+    --mod: #34d399;
+    --helper: #94a3b8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Exo 2', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ANIMATED BACKGROUND */
+  .bg-grid {
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,200,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,200,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bg-glow {
+    position: fixed;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,200,255,0.06) 0%, transparent 70%);
+    top: -100px; left: -100px;
+    pointer-events: none;
+    z-index: 0;
+    animation: drift 20s ease-in-out infinite alternate;
+  }
+  .bg-glow2 {
+    position: fixed;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(14,240,160,0.05) 0%, transparent 70%);
+    bottom: 0; right: 0;
+    pointer-events: none;
+    z-index: 0;
+    animation: drift 15s ease-in-out infinite alternate-reverse;
+  }
+
+  @keyframes drift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(80px, 60px); }
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 64px;
+    background: rgba(8,12,20,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.8rem; font-weight: 700;
+    letter-spacing: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 600; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-ip {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem; letter-spacing: 2px;
+    color: var(--accent); cursor: pointer;
+    border: 1px solid rgba(0,200,255,0.3);
+    padding: 6px 14px; border-radius: 4px;
+    transition: all 0.2s; position: relative;
+  }
+  .nav-ip:hover { background: rgba(0,200,255,0.1); border-color: var(--accent); }
+  .nav-ip .tooltip {
+    position: absolute; bottom: -32px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #000; font-size: 0.7rem; padding: 4px 8px;
+    border-radius: 4px; white-space: nowrap; opacity: 0; pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .nav-ip:hover .tooltip { opacity: 1; }
+
+  /* HERO */
+  .hero {
+    position: relative; z-index: 1;
+    padding: 120px 40px 80px;
+    text-align: center;
+    display: flex; flex-direction: column; align-items: center;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--accent2); border: 1px solid rgba(14,240,160,0.3);
+    padding: 6px 20px; border-radius: 100px; margin-bottom: 28px;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-weight: 700; letter-spacing: 8px;
+    line-height: 1;
+    background: linear-gradient(135deg, #fff 30%, var(--accent) 70%, var(--accent2) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    animation: fadeDown 0.6s 0.1s ease both;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem; color: var(--text-dim);
+    margin-top: 20px; letter-spacing: 3px; text-transform: uppercase;
+    animation: fadeDown 0.6s 0.2s ease both;
+  }
+
+  .hero-ip-box {
+    margin-top: 48px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 48px;
+    display: flex; align-items: center; gap: 20px;
+    animation: fadeUp 0.6s 0.3s ease both;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .hero-ip-box:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(0,200,255,0.15);
+  }
+
+  .ip-label {
+    font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .ip-value {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.8rem; font-weight: 700; letter-spacing: 4px;
+    color: var(--accent);
+  }
+  .ip-copy-btn {
+    background: rgba(0,200,255,0.1); border: 1px solid rgba(0,200,255,0.3);
+    color: var(--accent); padding: 8px 16px; border-radius: 6px;
+    font-family: 'Exo 2', sans-serif; font-size: 0.8rem; letter-spacing: 2px;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .ip-copy-btn:hover { background: rgba(0,200,255,0.2); }
+
+  .hero-stats {
+    margin-top: 48px;
+    display: flex; gap: 40px;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .stat-box {
+    text-align: center;
+    padding: 20px 32px;
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+  }
+  .stat-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem; font-weight: 700; color: #fff;
+  }
+  .stat-num span { color: var(--accent2); }
+  .stat-label {
+    font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--text-dim); margin-top: 4px;
+  }
+
+  /* SECTIONS */
+  .section {
+    position: relative; z-index: 1;
+    padding: 80px 40px;
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .section-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem; font-weight: 700; letter-spacing: 4px;
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 48px;
+  }
+  .section-title::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+  }
+  .section-title .line-accent { color: var(--accent); }
+
+  /* SERVER INFO */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .info-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 28px;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .info-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .info-card:hover { border-color: rgba(0,200,255,0.4); transform: translateY(-4px); }
+  .info-card:hover::before { opacity: 1; }
+
+  .info-icon {
+    font-size: 2rem; margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: center;
+    width: 52px; height: 52px;
+    background: rgba(0,200,255,0.08); border-radius: 10px;
+    border: 1px solid rgba(0,200,255,0.15);
+  }
+  .info-card h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase;
+    color: #fff; margin-bottom: 10px;
+  }
+  .info-card p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; }
+
+  /* TEAM */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .role-group { margin-bottom: 48px; }
+  .role-group-title {
+    font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--text-dim); margin-bottom: 20px;
+    padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  }
+
+  .member-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px;
+    display: flex; align-items: center; gap: 14px;
+    transition: all 0.2s; position: relative; overflow: hidden;
+  }
+  .member-card:hover { transform: translateX(4px); }
+
+  .member-avatar {
+    width: 44px; height: 44px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; font-weight: 700; flex-shrink: 0;
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  .member-info { flex: 1; min-width: 0; }
+  .member-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700; font-size: 1rem; letter-spacing: 1px;
+    color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .member-role {
+    font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+    margin-top: 3px; font-weight: 600;
+  }
+
+  /* Role colors */
+  .role-owner .member-avatar { background: rgba(255,77,77,0.15); color: var(--owner); border: 1px solid rgba(255,77,77,0.3); }
+  .role-owner .member-role { color: var(--owner); }
+  .role-owner .member-card { border-left: 3px solid var(--owner); }
+
+  .role-jrowner .member-avatar { background: rgba(255,136,77,0.15); color: var(--jrowner); border: 1px solid rgba(255,136,77,0.3); }
+  .role-jrowner .member-role { color: var(--jrowner); }
+  .role-jrowner .member-card { border-left: 3px solid var(--jrowner); }
+
+  .role-manager .member-avatar { background: rgba(255,204,0,0.15); color: var(--manager); border: 1px solid rgba(255,204,0,0.3); }
+  .role-manager .member-role { color: var(--manager); }
+  .role-manager .member-card { border-left: 3px solid var(--manager); }
+
+  .role-srdev .member-avatar { background: rgba(168,85,247,0.15); color: var(--srdev); border: 1px solid rgba(168,85,247,0.3); }
+  .role-srdev .member-role { color: var(--srdev); }
+  .role-srdev .member-card { border-left: 3px solid var(--srdev); }
+
+  .role-dev .member-avatar { background: rgba(129,140,248,0.15); color: var(--dev); border: 1px solid rgba(129,140,248,0.3); }
+  .role-dev .member-role { color: var(--dev); }
+  .role-dev .member-card { border-left: 3px solid var(--dev); }
+
+  .role-admin .member-avatar { background: rgba(239,68,68,0.15); color: var(--admin); border: 1px solid rgba(239,68,68,0.3); }
+  .role-admin .member-role { color: var(--admin); }
+  .role-admin .member-card { border-left: 3px solid var(--admin); }
+
+  .role-srmod .member-avatar { background: rgba(34,211,238,0.15); color: var(--srmod); border: 1px solid rgba(34,211,238,0.3); }
+  .role-srmod .member-role { color: var(--srmod); }
+  .role-srmod .member-card { border-left: 3px solid var(--srmod); }
+
+  .role-mod .member-avatar { background: rgba(52,211,153,0.15); color: var(--mod); border: 1px solid rgba(52,211,153,0.3); }
+  .role-mod .member-role { color: var(--mod); }
+  .role-mod .member-card { border-left: 3px solid var(--mod); }
+
+  .role-helper .member-avatar { background: rgba(148,163,184,0.15); color: var(--helper); border: 1px solid rgba(148,163,184,0.3); }
+  .role-helper .member-role { color: var(--helper); }
+  .role-helper .member-card { border-left: 3px solid var(--helper); }
+
+  /* ROLES LEGEND */
+  .roles-legend {
+    display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px;
+  }
+  .legend-badge {
+    padding: 6px 16px; border-radius: 6px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; border: 1px solid currentColor;
+    font-family: 'Rajdhani', sans-serif;
+    cursor: default;
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--text-dim); font-size: 0.85rem;
+  }
+  .footer-logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem; font-weight: 700; letter-spacing: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  /* COPY TOAST */
+  .toast {
+    position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(100px);
+    background: var(--accent2); color: #000;
+    padding: 12px 28px; border-radius: 8px;
+    font-weight: 700; letter-spacing: 2px; font-size: 0.85rem;
+    transition: transform 0.3s; z-index: 9999;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 40px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ONLINE INDICATOR */
+  .online-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent2);
+    box-shadow: 0 0 8px var(--accent2);
+    animation: pulse 2s infinite;
+    display: inline-block; margin-right: 8px;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* VERSION BADGE */
+  .version-badge {
+    background: rgba(14,240,160,0.1); border: 1px solid rgba(14,240,160,0.3);
+    color: var(--accent2); padding: 3px 10px; border-radius: 4px;
+    font-size: 0.7rem; letter-spacing: 2px; font-weight: 700;
+  }
+
+  /* ADMIN LINK */
+  .admin-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--text-dim); font-size: 0.8rem; text-decoration: none;
+    letter-spacing: 1px; transition: color 0.2s;
+  }
+  .admin-link:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 80px 20px 60px; }
+    .hero-stats { flex-direction: column; gap: 12px; }
+    .hero-ip-box { flex-direction: column; padding: 20px; }
+    .section { padding: 60px 20px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">AxoSMP</div>
+  <ul class="nav-links">
+    <li><a href="#info">Server</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#rollen">Rollen</a></li>
+  </ul>
+  <div class="nav-ip" onclick="copyIP()">
+    <span class="online-dot"></span>193.135.10.21:15039
+    <span class="tooltip">Klicken zum Kopieren</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">☁ Survival Minecraft Server</div>
+  <h1>AXOSMP</h1>
+  <p class="hero-sub">Erlebe Minecraft auf einem ganz neuen Level</p>
+
+  <div class="hero-ip-box" onclick="copyIP()">
+    <div>
+      <div class="ip-label">Server IP</div>
+      <div class="ip-value">193.135.10.21:15039</div>
+    </div>
+    <button class="ip-copy-btn" id="copyBtn">📋 Kopieren</button>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-box">
+      <div class="stat-num"><span id="playerCount">0</span></div>
+      <div class="stat-label">Spieler Online</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">1<span>.21</span></div>
+      <div class="stat-label">Minecraft Version</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num"><span>24</span>/7</div>
+      <div class="stat-label">Online</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num"><span id="memberCount">0</span></div>
+      <div class="stat-label">Team Mitglieder</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVER INFO -->
+<section class="section" id="info">
+  <h2 class="section-title"><span class="line-accent">01</span> Server Informationen</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-icon">⚔️</div>
+      <h3>Survival SMP</h3>
+      <p>Klassisches Survival-Erlebnis mit besonderen Features. Baue, erforsche und überlebe gemeinsam mit anderen Spielern.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🌍</div>
+      <h3>Große Welt</h3>
+      <p>Eine riesige, handgefertigte Welt wartet auf dich. Endlose Ressourcen und spannende Biome zum Entdecken.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🛡️</div>
+      <h3>Anti-Cheat</h3>
+      <p>Fortschrittliches Anti-Cheat System sorgt für ein faires Spielerlebnis. Keine Hacker, keine Cheater.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🏆</div>
+      <h3>Rangsystem</h3>
+      <p>Schalte exklusive Ränge und Perks frei. Zeige anderen Spielern deinen Status auf dem Server.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">💬</div>
+      <h3>Community</h3>
+      <p>Eine freundliche und aktive Community. Trete unserem Discord bei und bleibe immer up-to-date.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🔧</div>
+      <h3>Custom Plugins</h3>
+      <p>Eigens entwickelte Plugins für ein einzigartiges Erlebnis, das du so nur auf AxoSMP findest.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ROLES LEGEND -->
+<section class="section" id="rollen">
+  <h2 class="section-title"><span class="line-accent">02</span> Rollen & Hierarchie</h2>
+  <div class="roles-legend">
+    <span class="legend-badge" style="color: var(--owner);">👑 Owner</span>
+    <span class="legend-badge" style="color: var(--jrowner);">🔱 Jr.Owner</span>
+    <span class="legend-badge" style="color: var(--manager);">⭐ Manager</span>
+    <span class="legend-badge" style="color: var(--srdev);">🧬 Sr.Dev</span>
+    <span class="legend-badge" style="color: var(--dev);">💻 Dev</span>
+    <span class="legend-badge" style="color: var(--admin);">🔴 Admin</span>
+    <span class="legend-badge" style="color: var(--srmod);">🔷 SrMod</span>
+    <span class="legend-badge" style="color: var(--mod);">🟢 Mod</span>
+    <span class="legend-badge" style="color: var(--helper);">🔹 Helper</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TEAM -->
+<section class="section" id="team">
+  <h2 class="section-title"><span class="line-accent">03</span> Unser Team</h2>
+  <div id="teamContainer"></div>
+</section>
+
+<footer>
+  <div class="footer-logo">AXOSMP</div>
+  <div style="text-align:center; color: var(--text-dim); font-size: 0.8rem;">
+    <span class="online-dot"></span>Server läuft auf 193.135.10.21:15039
+    <br><span style="font-size:0.7rem; opacity:0.5; letter-spacing:1px;">© 2025 AxoSMP. Alle Rechte vorbehalten.</span>
+  </div>
+  <a href="https://web.axosmp.net/admin" class="admin-link">
+    🔐 Admin Panel →
+  </a>
+</footer>
+
+<div class="toast" id="toast">✓ IP Kopiert!</div>
+
+<script>
+  // TEAM DATA (stored in localStorage so admin panel can sync)
+  const defaultTeam = [
+    { name: "Axolotl_King", role: "owner", display: "Owner" },
+    { name: "DarkMaster99", role: "jrowner", display: "Jr.Owner" },
+    { name: "SkyBuilder", role: "manager", display: "Manager" },
+    { name: "CodeWizard", role: "srdev", display: "Sr.Dev" },
+    { name: "PixelDev", role: "dev", display: "Dev" },
+    { name: "ServerGuard", role: "admin", display: "Admin" },
+    { name: "TopMod", role: "srmod", display: "SrMod" },
+    { name: "CoolMod", role: "mod", display: "Mod" },
+    { name: "NewHelper", role: "helper", display: "Helper" },
+  ];
+
+  const roleOrder = ["owner","jrowner","manager","srdev","dev","admin","srmod","mod","helper"];
+  const roleLabels = {
+    owner: "👑 Owner", jrowner: "🔱 Jr.Owner", manager: "⭐ Manager",
+    srdev: "🧬 Sr.Dev", dev: "💻 Dev", admin: "🔴 Admin",
+    srmod: "🔷 SrMod", mod: "🟢 Mod", helper: "🔹 Helper"
+  };
+
+  function getTeam() {
+    try {
+      const stored = localStorage.getItem('axosmp_team');
+      return stored ? JSON.parse(stored) : defaultTeam;
+    } catch { return defaultTeam; }
+  }
+
+  function getInitials(name) {
+    return name.substring(0, 2).toUpperCase();
+  }
+
+  function renderTeam() {
+    const team = getTeam();
+    const container = document.getElementById('teamContainer');
+    container.innerHTML = '';
+
+    // Count members
+    document.getElementById('memberCount').textContent = team.length;
+
+    // Group by role
+    roleOrder.forEach(role => {
+      const members = team.filter(m => m.role === role);
+      if (!members.length) return;
+
+      const group = document.createElement('div');
+      group.className = 'role-group';
+      group.innerHTML = `<div class="role-group-title">${roleLabels[role]}</div>
+        <div class="team-grid">
+          ${members.map(m => `
+            <div class="role-${role}">
+              <div class="member-card">
+                <div class="member-avatar">${getInitials(m.name)}</div>
+                <div class="member-info">
+                  <div class="member-name">${m.name}</div>
+                  <div class="member-role">${m.display}</div>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>`;
+      container.appendChild(group);
+    });
+  }
+
+  function copyIP() {
+    navigator.clipboard.writeText('193.135.10.21:15039').then(() => {
+      const toast = document.getElementById('toast');
+      const btn = document.getElementById('copyBtn');
+      toast.classList.add('show');
+      btn.textContent = '✓ Kopiert!';
+      setTimeout(() => {
+        toast.classList.remove('show');
+        btn.textContent = '📋 Kopieren';
+      }, 2000);
+    });
+  }
+
+  // Simulate player count
+  let pc = 0;
+  function animateCount() {
+    const target = Math.floor(Math.random() * 30) + 5;
+    const el = document.getElementById('playerCount');
+    const step = () => {
+      if (pc < target) { pc++; el.textContent = pc; setTimeout(step, 40); }
+    };
+    step();
+  }
+  animateCount();
+
+  // Initial render
+  renderTeam();
+
+  // Refresh if admin changed data
+  window.addEventListener('storage', renderTeam);
+</script>
+</body>
+</html>
