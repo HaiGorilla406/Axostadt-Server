@@ -1,0 +1,16 @@
+locations:
+  Common:
+  - spawn;-18;272;-85;SOUTH_SOUTH_WEST
+  - spawn;52;225;-305;EAST_SOUTH_EAST
+  rare:
+  - spawn;-22;272;-85;SOUTH_SOUTH_EAST
+  - spawn;65;225;-301;SOUTH_WEST
+  mystic:
+  - spawn;-18;272;-79;NORTH_NORTH_WEST
+  - spawn;73;226;-289;WEST_SOUTH_WEST
+  gems:
+  - spawn;-22;272;-79;NORTH_EAST
+  - spawn;73;226;-279;NORTH_WEST
+  Spring:
+  - spawn;-25;272;-82;EAST
+  - spawn;75;226;-284;WEST_NORTH_WEST

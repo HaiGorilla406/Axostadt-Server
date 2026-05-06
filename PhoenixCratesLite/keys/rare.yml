@@ -1,0 +1,12 @@
+enabled: true
+identifier: rare
+virtual: true
+glow: false
+item:
+  material: TRIPWIRE_HOOK
+  display-name: '&bRare Key'
+  lore:
+  - §7This is a lore line!
+  - ''
+  - §eUse this key in §6%crate%§e!
+  amount: 1

@@ -1,0 +1,218 @@
+enabled: true
+identifier: Spring
+display-name: Spring
+block-material: ORANGE_SHULKER_BOX
+engine: VANILLA_BLOCK
+open-money-cost: 0.0
+open-cooldown: 0
+simultaneous-openings: true
+preview-item: false
+permission:
+  required: false
+  permission: phoenixcrates.crate.Spring
+animation:
+  idle-effects:
+  - DEFAULT;{REDSTONE;#ff0000;0.0;0.0;0.0;1.0;0.1;2}
+  - DEFAULT;{FLAME;#ffffff;0.0;0.0;0.0;2.0;0.1;2}
+  - STAR;{SMOKE_NORMAL;#ffffff;0.0;0.0;0.0;0.0;0.0;2}
+  opening-animations:
+    '0':
+    - DEFAULT;{}
+    - NONE;{}
+    - DEFAULT;{#ffffff}
+hologram:
+  lines:
+  - ''
+  - ''
+  - '&6ꜱᴘʀɪɴɢ ᴄʀᴀᴛᴇ'
+  - ''
+  offset: 0.0
+menus:
+  rewards: default_rewards_preview
+  select-reward: default_select_reward
+key-required: true
+linked-keys-ids:
+- spring
+broadcast:
+  message: '&ePlayer &a%player% &ejust got &6"%reward%" &ereward from the crate &6%crate%&e!'
+max-win-rewards: 0
+rewards-mode: RANDOM
+guaranteed-reward-type: SEQUENTIAL
+rewards:
+  '0':
+    identifier: reward_1775738471535
+    display-item:
+      material: custom:mvp_rang
+      amount: 1
+    win-items:
+      '0':
+        material: custom:mvp_rang
+        amount: 1
+    win-items: []
+    win-commands: 
+    - lp user %player% parent addtemp mvp 7d
+    broadcast: true
+    percentage: 0.1
+    win-limits: -1
+    guaranteed-win: -1
+    restricted-permissions: []
+    alternative-reward:
+      enabled: false
+      reward:
+        item:
+          material: DIAMOND_PICKAXE
+          display-name: '&aAlternative Item'
+          amount: 1
+        virtual: false
+        broadcast: false
+        commands: []
+  '1':
+    identifier: reward_1775738471537
+    display-item:
+      material: custom:1_spring_key
+      amount: 1
+    win-items:
+      '0':
+        material: custom:1_spring_key
+        amount: 1
+    win-items: []
+    win-commands: 
+    - crate giveKey Spring %player% 1
+    broadcast: false
+    percentage: 1.0
+    win-limits: -1
+    guaranteed-win: -1
+    restricted-permissions: []
+    alternative-reward:
+      enabled: false
+      reward:
+        item:
+          material: DIAMOND_PICKAXE
+          display-name: '&aAlternative Item'
+          amount: 1
+        virtual: false
+        broadcast: false
+        commands: []
+  '2':
+    identifier: reward_1775738471539
+    display-item:
+      material: custom:2500_gems
+      amount: 1
+    win-items: []
+    win-commands: 
+    - gems add %player% 2500
+    broadcast: false
+    percentage: 2.05
+    win-limits: -1
+    guaranteed-win: -1
+    restricted-permissions: []
+    alternative-reward:
+      enabled: false
+      reward:
+        item:
+          material: DIAMOND_PICKAXE
+          display-name: '&aAlternative Item'
+          amount: 1
+        virtual: false
+        broadcast: false
+        commands: []
+  '3':
+    identifier: reward_1775738471541
+    display-item:
+      material: custom:axodrill
+      amount: 1
+    win-commands: []
+    broadcast: false
+    percentage: 5.0
+    win-limits: -1
+    guaranteed-win: -1
+    restricted-permissions: []
+    alternative-reward:
+      enabled: false
+      reward:
+        item:
+          material: DIAMOND_PICKAXE
+          display-name: '&aAlternative Item'
+          amount: 1
+        virtual: false
+        broadcast: false
+        commands: []
+    win-items:
+      '0':
+        material: custom:axodrill
+        amount: 1
+  '4':
+    identifier: reward_1775738471543
+    display-item:
+      material: custom:spring_spear
+      amount: 1
+    win-commands: []
+    broadcast: false
+    percentage: 100.0
+    win-limits: -1
+    guaranteed-win: -1
+    restricted-permissions: []
+    alternative-reward:
+      enabled: false
+      reward:
+        item:
+          material: DIAMOND_PICKAXE
+          display-name: '&aAlternative Item'
+          amount: 1
+        virtual: false
+        broadcast: false
+        commands: []
+    win-items:
+      '0':
+        material: custom:spring_spear
+        amount: 1
+  '5':
+    identifier: reward_1775738471545
+    display-item:
+      material: custom:spring_mace
+      amount: 1
+    win-items:
+      '0':
+        material: custom:spring_mace
+        amount: 1
+    win-commands: []
+    broadcast: false
+    percentage: 100.0
+    win-limits: -1
+    guaranteed-win: -1
+    restricted-permissions: []
+    alternative-reward:
+      enabled: false
+      reward:
+        item:
+          material: DIAMOND_PICKAXE
+          display-name: '&aAlternative Item'
+          amount: 1
+        virtual: false
+        broadcast: false
+        commands: []
+  '6':
+    identifier: reward_1775738471547
+    display-item:
+      material: custom:spring_mace1
+      amount: 1
+    win-items:
+      '0':
+        material: custom:spring_mace1
+        amount: 1
+    win-commands: []
+    broadcast: false
+    percentage: 100.0
+    win-limits: -1
+    guaranteed-win: -1
+    restricted-permissions: []
+    alternative-reward:
+      enabled: false
+      reward:
+        item:
+          material: DIAMOND_PICKAXE
+          display-name: '&aAlternative Item'
+          amount: 1
+        virtual: false
+        broadcast: false
+        commands: []

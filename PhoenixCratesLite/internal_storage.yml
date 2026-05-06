@@ -1,0 +1,298 @@
+items:
+  enchanted_golden_apple:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:enchanted_golden_apple
+    count: 1
+    schema_version: 1
+  rare_sword:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:diamond_sword
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#4498DB",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Rare Crate",underlined:0b}],text:""}]'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#008EFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"RARE
+        ",underlined:0b},{bold:1b,color:"#008EFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"SWORD",underlined:0b}],text:""}'
+      minecraft:enchantments: '{"minecraft:sharpness":3,"minecraft:unbreaking":3}'
+    schema_version: 1
+  rare_pickaxe:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:diamond_pickaxe
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#4498DB",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Rare Crate",underlined:0b}],text:""}]'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#008EFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"RARE
+        ",underlined:0b},{bold:1b,color:"#008EFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"PICKAXE",underlined:0b}],text:""}'
+      minecraft:enchantments: '{"minecraft:efficiency":4,"minecraft:unbreaking":3}'
+    schema_version: 1
+  rare_shovel:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:diamond_shovel
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#4498DB",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Rare Crate",underlined:0b}],text:""}]'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#008EFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"RARE
+        ",underlined:0b},{bold:1b,color:"#008EFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"SHOVEL",underlined:0b}],text:""}'
+      minecraft:enchantments: '{"minecraft:efficiency":3,"minecraft:unbreaking":3}'
+    schema_version: 1
+  rare_axe:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:diamond_axe
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#4498DB",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Rare Crate",underlined:0b}],text:""}]'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#008EFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"RARE
+        ",underlined:0b},{bold:1b,color:"#008EFF",italic:0b,obfuscated:0b,strikethrough:0b,text:"AXE",underlined:0b}],text:""}'
+      minecraft:enchantments: '{"minecraft:efficiency":3,"minecraft:sharpness":2,"minecraft:unbreaking":3}'
+    schema_version: 1
+  mystic_helmet:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:netherite_helmet
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Mystic Crate",underlined:0b}],text:""}]'
+      minecraft:enchantments: '{"minecraft:mending":1,"minecraft:protection":4,"minecraft:unbreaking":3}'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"MYSTIC
+        HELMET",underlined:0b}],text:""}'
+    schema_version: 1
+  mystic_chestplatte:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:netherite_chestplate
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Mystic Crate",underlined:0b}],text:""}]'
+      minecraft:enchantments: '{"minecraft:mending":1,"minecraft:protection":4,"minecraft:unbreaking":3}'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"MYSTIC
+        CHESTPLATTE",underlined:0b}],text:""}'
+    schema_version: 1
+  mystic_leggings:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:netherite_leggings
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Mystic Crate",underlined:0b}],text:""}]'
+      minecraft:enchantments: '{"minecraft:mending":1,"minecraft:protection":4,"minecraft:unbreaking":3}'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"MYSTIC
+        LEGGINGS",underlined:0b}],text:""}'
+    schema_version: 1
+  mystic_boots:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:netherite_boots
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Mystic Crate",underlined:0b}],text:""}]'
+      minecraft:enchantments: '{"minecraft:mending":1,"minecraft:protection":4,"minecraft:unbreaking":3}'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"MYSTIC
+        BOOTS",underlined:0b}],text:""}'
+    schema_version: 1
+  mystic_sword:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:netherite_sword
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Mystic Crate",underlined:0b}],text:""}]'
+      minecraft:enchantments: '{"minecraft:looting":2,"minecraft:mending":1,"minecraft:sharpness":5,"minecraft:unbreaking":3}'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"MYSTIC
+        SWORD",underlined:0b}],text:""}'
+    schema_version: 1
+  mystic_pickaxe:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:netherite_pickaxe
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Mystic Crate",underlined:0b}],text:""}]'
+      minecraft:enchantments: '{"minecraft:efficiency":5,"minecraft:mending":1,"minecraft:unbreaking":3}'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#FF0000",italic:0b,obfuscated:0b,strikethrough:0b,text:"MYSTIC
+        PICKAXE",underlined:0b}],text:""}'
+    schema_version: 1
+  common_helmet:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:diamond_helmet
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Common Crate",underlined:0b}],text:""}]'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"COMMON
+        HELMET",underlined:0b}],text:""}'
+      minecraft:enchantments: '{"minecraft:protection":1}'
+      minecraft:trim: '{material:"minecraft:lapis",pattern:"minecraft:spire"}'
+    schema_version: 1
+  common_chestplatte:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:diamond_chestplate
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Common Crate",underlined:0b}],text:""}]'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"COMMON
+        CHESTPLATTE",underlined:0b}],text:""}'
+      minecraft:enchantments: '{"minecraft:protection":1}'
+      minecraft:trim: '{material:"minecraft:lapis",pattern:"minecraft:spire"}'
+    schema_version: 1
+  common_leggings:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:diamond_leggings
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Common Crate",underlined:0b}],text:""}]'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"COMMON
+        LEGGINGS",underlined:0b}],text:""}'
+      minecraft:enchantments: '{"minecraft:protection":1,"minecraft:swift_sneak":2}'
+      minecraft:trim: '{material:"minecraft:lapis",pattern:"minecraft:spire"}'
+    schema_version: 1
+  common_boots:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:diamond_boots
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Common Crate",underlined:0b}],text:""}]'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"COMMON
+        BOOTS",underlined:0b}],text:""}'
+      minecraft:enchantments: '{"minecraft:protection":1}'
+      minecraft:trim: '{material:"minecraft:lapis",pattern:"minecraft:spire"}'
+    schema_version: 1
+  common_sword:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:diamond_sword
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Common Crate",underlined:0b}],text:""}]'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"COMMON
+        SWORD",underlined:0b}],text:""}'
+    schema_version: 1
+  common_pickaxe:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:diamond_pickaxe
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Common Crate",underlined:0b}],text:""}]'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"COMMON
+        PICKAXE",underlined:0b}],text:""}'
+    schema_version: 1
+  common_axe:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:diamond_axe
+    count: 1
+    components:
+      minecraft:lore: '[{extra:[{bold:0b,color:"aqua",italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}],text:""},{extra:[{bold:0b,color:"white",italic:0b,obfuscated:0b,strikethrough:0b,text:"•
+        ",underlined:0b},{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"Aus
+        der Common Crate",underlined:0b}],text:""}]'
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#00FF8D",italic:0b,obfuscated:0b,strikethrough:0b,text:"COMMON
+        AXE",underlined:0b}],text:""}'
+    schema_version: 1
+  mvp_rang:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:orange_dye
+    count: 1
+    components:
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#FF7200",italic:0b,obfuscated:0b,strikethrough:0b,text:"MVP
+        Rang",underlined:0b}],text:""}'
+    schema_version: 1
+  1_spring_key:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:orange_candle
+    count: 1
+    components:
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#FF7200",italic:0b,obfuscated:0b,strikethrough:0b,text:"1
+        SPRING KEY",underlined:0b}],text:""}'
+    schema_version: 1
+  2500_gems:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:purple_dye
+    count: 1
+    components:
+      minecraft:custom_name: '{extra:[{bold:1b,color:"dark_purple",italic:0b,obfuscated:0b,strikethrough:0b,text:"+2,500
+        Gems",underlined:0b}],text:""}'
+    schema_version: 1
+  axodrill:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:netherite_pickaxe
+    count: 1
+    components:
+      minecraft:lore: '[{color:"gray",text:"Ein mächtiger Bohrer."}]'
+      minecraft:custom_name: '{color:"#9863E7",text:"AxoDrill"}'
+      minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers"]}'
+      minecraft:enchantments: '{"minecraft:efficiency":5,"minecraft:mending":1,"minecraft:unbreaking":3}'
+      minecraft:custom_data: '{PublicBukkitValues:{"axotools:axotool_type":"drill"}}'
+    schema_version: 1
+  spring_spear:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:netherite_spear
+    count: 1
+    components:
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#FF7200",italic:0b,obfuscated:0b,strikethrough:0b,text:"SPRING
+        SPEAR",underlined:0b}],text:""}'
+      minecraft:enchantments: '{"minecraft:bane_of_arthropods":5,"minecraft:fire_aspect":5,"minecraft:knockback":3,"minecraft:lunge":3,"minecraft:mending":1,"minecraft:sharpness":5,"minecraft:smite":5,"minecraft:unbreaking":3}'
+    schema_version: 1
+  spring_mace:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:mace
+    count: 1
+    components:
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#FF7200",italic:0b,obfuscated:0b,strikethrough:0b,text:"SPRING
+        MACE",underlined:0b}],text:""}'
+      minecraft:enchantments: '{"minecraft:density":5,"minecraft:mending":1,"minecraft:unbreaking":3,"minecraft:wind_burst":2}'
+    schema_version: 1
+  spring_mace1:
+    ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4671
+    id: minecraft:mace
+    count: 1
+    components:
+      minecraft:custom_name: '{extra:[{bold:1b,color:"#FF7200",italic:0b,obfuscated:0b,strikethrough:0b,text:"SPRING
+        MACE",underlined:0b}],text:""}'
+      minecraft:enchantments: '{"minecraft:breach":4,"minecraft:mending":1,"minecraft:unbreaking":3}'
+    schema_version: 1

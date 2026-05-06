@@ -1,0 +1,11 @@
+join-reminder: false
+language: UNDEFINED
+notify-if-new-version: true
+debug: false
+crates:
+  knockback: 0.6
+  quick-open: true
+performance:
+  internal-pool-size: 5
+  crate-render-radius: 15
+  hologram-refresh-rate: 10
