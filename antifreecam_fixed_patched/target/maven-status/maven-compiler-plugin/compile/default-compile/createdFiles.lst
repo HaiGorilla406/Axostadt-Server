@@ -1,0 +1,6 @@
+de\anticheat\antifreecam\PlayerListener.class
+de\anticheat\antifreecam\filter\EntityPacketFilter.class
+de\anticheat\antifreecam\filter\ChunkReloader.class
+de\anticheat\antifreecam\commands\AfCommand.class
+de\anticheat\antifreecam\AntiFreecam.class
+de\anticheat\antifreecam\filter\ChunkPacketFilter.class

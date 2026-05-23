@@ -1,0 +1,28 @@
+name: AntiFreecam
+version: '2.0.0'
+main: de.anticheat.antifreecam.AntiFreecam
+api-version: '1.21'
+folia-supported: true
+description: Macht Freecam nutzlos – Underground-Blöcke werden nicht an den Client gesendet
+authors: [ AntiCheat ]
+
+depend:
+  - packetevents
+
+commands:
+  antifreecam:
+    description: AntiFreecam Verwaltung
+    usage: /antifreecam <reload|status|toggle> [player]
+    permission: antifreecam.admin
+  af:
+    description: AntiFreecam Alias
+    usage: /af <reload|status|toggle> [player]
+    permission: antifreecam.admin
+
+permissions:
+  antifreecam.admin:
+    description: Zugriff auf alle AntiFreecam-Befehle
+    default: op
+  antifreecam.bypass:
+    description: Bypass – Spieler empfängt alle Chunk-Daten normal
+    default: false

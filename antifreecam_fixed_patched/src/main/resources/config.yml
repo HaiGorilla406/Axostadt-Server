@@ -1,0 +1,85 @@
+# AntiFreecam v2 Konfiguration
+# Macht Freecam nutzlos durch Chunk-Packet-Filtering
+
+# =========================================================
+# WIE ES FUNKTIONIERT
+# =========================================================
+# Anstatt Freecam zu erkennen und zu kicken, werden einfach
+# alle Block-Daten unterhalb eines bestimmten Y-Levels aus
+# den Chunk-Paketen entfernt BEVOR sie den Client erreichen.
+#
+# Resultat: Freecam-Nutzer fliegen durch leere Luft/Bedrock –
+# sie sehen keine Basen, keine Ores, keine versteckten Räume.
+# Normale Spieler sind davon NICHT betroffen.
+# =========================================================
+
+filtering:
+  enabled: true
+
+  # Y-Level unterhalb dessen Blöcke ausgeblendet werden.
+  # Alles UNTER diesem Wert wird durch Luft ersetzt.
+  # Standard: 0 (versteckt alles unter Meeresspiegel)
+  # Für nur Ores: z.B. -32 (nur tief underground)
+  # Für maximalen Schutz: 60 (alles unter Meeresspiegel + mehr)
+  # Y-Level ab dem Freecam gefiltert wird (Freecam sieht nichts darunter)
+  hide-below-y: 0
+
+  # Y-Level ab dem Chunks für den Spieler selbst neu geladen werden
+  # Sollte höher sein als hide-below-y damit keine schwarzen Höhlen entstehen
+  player-load-y: 20
+
+  # Welcher Block soll stattdessen gesendet werden?
+  # "air"     = komplett leer (Freecam sieht nichts)
+  # "stone"   = sieht aus wie normaler Stein (täuscht Freecam)
+  # "bedrock" = solide Wand
+  replacement-block: "air"
+
+  # Spieler im Spectator-Modus von der Filterung ausnehmen?
+  exclude-spectators: true
+
+  # Nur filtern wenn Spieler sich unter dem hide-below-y Level befinden?
+  # false = immer filtern (empfohlen – verhindert dass Freecam von oben schaut)
+  # true  = nur filtern wenn Spieler selbst unter dem Level ist
+  only-when-underground: false
+
+  # Chunk-Sections die komplett leer sind, überspringen (Performance)
+  skip-empty-sections: true
+
+# =========================================================
+# WORLD FILTER
+# =========================================================
+worlds:
+  # Filterung nur in bestimmten Welten? Leer = alle Welten
+  # "world" = Overworld (Standard-Bukkit-Name)
+  whitelist:
+    - "world"
+
+  # Welten komplett von der Filterung ausschließen
+  blacklist: []
+
+# =========================================================
+# PERFORMANCE
+# =========================================================
+performance:
+  # Chunk-Filtering läuft im Netty-Thread – keine Performance-Einbußen auf dem Server-Tick
+  # Dieser Wert begrenzt wie viele Sections pro Chunk-Paket verarbeitet werden
+  max-sections-per-packet: 24
+
+# =========================================================
+# MESSAGES
+# =========================================================
+messages:
+  prefix: "&8[&bAF&8] &r"
+  reload-success: "&aKonfiguration neu geladen."
+  filtering-enabled: "&aChunk-Filterung aktiviert."
+  filtering-disabled: "&cChunk-Filterung deaktiviert."
+  player-bypass-on: "&e%player% &7hat jetzt Bypass (empfängt alle Chunks)."
+  player-bypass-off: "&e%player% &7hat keinen Bypass mehr."
+
+# =========================================================
+# ADVANCED
+# =========================================================
+advanced:
+  debug: false
+  # Statistiken in der Konsole ausgeben (alle X Sekunden, 0 = deaktiviert)
+  stats-interval-seconds: 0
