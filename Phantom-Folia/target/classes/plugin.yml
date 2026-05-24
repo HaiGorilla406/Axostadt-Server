@@ -1,0 +1,18 @@
+name: Phantom
+main: px86.phantom.PhantomPlugin
+version: 1.0.5
+api-version: "1.20"
+author: px86
+softdepend: [packetevents]
+description: All-in-one anti-xray plugin
+
+commands:
+  phantom:
+    description: Main command for Phantom anti-xray
+    usage: "/phantom <reload|debug>"
+    permission: phantom.command
+
+permissions:
+  phantom.command:
+    description: Allow use of /phantom
+    default: op

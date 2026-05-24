@@ -1,0 +1,80 @@
+# Phantom Configuration
+
+# Worlds where Phantom is enabled
+worlds:
+  - world
+  - world_nether
+  - world_the_end
+
+# Raytrace antixray options - tune carefully before enabling in production
+raytrace-anti-xray:
+  enabled: true
+  # Blocks to hide from players until visible via ray tracing / exposure (Enable Paper AntiXray Engine Mode 1 first for best results)
+  hidden-blocks:
+    - DIAMOND_ORE
+    - DEEPSLATE_DIAMOND_ORE
+    - IRON_ORE
+    - DEEPSLATE_IRON_ORE
+    - GOLD_ORE
+    - DEEPSLATE_GOLD_ORE
+    - EMERALD_ORE
+    - DEEPSLATE_EMERALD_ORE
+    - COAL_ORE
+    - DEEPSLATE_COAL_ORE
+    - LAPIS_ORE
+    - DEEPSLATE_LAPIS_ORE
+    - COPPER_ORE
+    - DEEPSLATE_COPPER_ORE
+    - REDSTONE_ORE
+    - DEEPSLATE_REDSTONE_ORE
+    - NETHER_QUARTZ_ORE
+    - NETHER_GOLD_ORE
+    - ANCIENT_DEBRIS
+    - CHEST
+    - SPAWNER
+    - CAVE_AIR
+  # Block used to mask hidden ores client-side if there are no valid blocks below to replace
+  mask-block: STONE
+  # Maximum ray-trace distance from player eyes when determining visibility
+  max-ray-distance: 128.0
+  # Blocks above this Y will not be ray-traced or masked. Raise it or remove it to disable the cutoff.
+  max-raytrace-y: 64
+  # Whether to consider only direct line-of-sight (true) or allow limited diffusion in caves (false)
+  strict-line-of-sight: false
+  # How often to re-evaluate visibility around each player (in ticks)
+  update-interval-ticks: 10
+  # Horizontal/vertical radius (in blocks) around each player to scan for hidden ores
+  scan-radius: 128
+  # If true, hidden ores will only be revealed if they are exposed to air. It is recommended to enable Paper AntiXray Engine Mode 1 for best results.
+  require-air-exposure: true
+  # Maximum number of ore blocks processed per player per tick when scanning (helps with low TPS)
+  max-blocks-per-tick: 1024
+
+# Y-level hiding options
+y-level-hiding:
+  enabled: true
+  # Y-level below which blocks are hidden
+  y-threshold: 0
+  # Y-level that the player has to be to reveal the blocks below y-threshold
+  reveal-y: 16
+  # Block used to mask the y level
+  mask-block: DEEPSLATE
+  # Chunk radius (in chunks) around each player to reveal
+  refresh-chunk-radius: 4
+
+# Raytrace entity hiding options
+raytrace-entity-hiding:
+  enabled: true
+  max-ray-distance: 64.0
+  scan-radius: 64
+  max-entities-per-tick: 64
+  # Extra ray-trace padding around entity bodies so they do not disappear the instant
+  # the exact center point leaves view or slips behind a corner.
+  visibility-radius: 0.35
+  excluded-entities:
+    - ENDER_DRAGON
+
+# Debug options
+debug:
+  log-packet-handling: false
+  show-rays: false
