@@ -1,0 +1,7 @@
+inventory_title: "ECPlus | %player% | Stranica %page%"
+nav_back: "§c◀"
+nav_next: "§a▶"
+page_icon: "§bStranica %page%"
+no_permission: "§cNemaš dopuštenje!"
+player_not_found: "§cIgrač nije pronađen!"
+page_invalid: "§cNevažeći broj stranice!"

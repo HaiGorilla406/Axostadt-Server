@@ -1,0 +1,7 @@
+inventory_title: "ECPlus | %player% | Sivu %page%"
+nav_back: "§c◀"
+nav_next: "§a▶"
+page_icon: "§bSivu %page%"
+no_permission: "§cSinulla ei ole oikeuksia!"
+player_not_found: "§cPelaajaa ei löytynyt!"
+page_invalid: "§cVirheellinen sivunumero!"

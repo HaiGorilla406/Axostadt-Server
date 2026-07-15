@@ -1,0 +1,7 @@
+inventory_title: "ECPlus | %player% | Pagină %page%"
+nav_back: "§c◀"
+nav_next: "§a▶"
+page_icon: "§bPagină %page%"
+no_permission: "§cNu ai permisiunea necesară!"
+player_not_found: "§cJucătorul nu a fost găsit!"
+page_invalid: "§cNumăr de pagină invalid!"

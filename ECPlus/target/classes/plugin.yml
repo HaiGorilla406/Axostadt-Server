@@ -1,0 +1,33 @@
+name: ECPlus
+main: com.HaiGorilla406.ecplus.ECPlusPlugin
+version: 0.2.0
+api-version: 1.21
+folia-supported: true
+author: HaiGorilla406
+
+commands:
+  ec:
+    description: Öffnet die erweiterte Enderchest
+    usage: "/ec [spieler] [seite]"
+    permission: ec.use
+
+permissions:
+  ec.use:
+    description: Erlaubt das Öffnen der eigenen Enderchest
+    default: true
+
+  ecplus.pages.2:
+    description: Erlaubt Zugriff auf Seite 2
+    default: false
+
+  ecplus.pages.3:
+    description: Erlaubt Zugriff auf Seite 3
+    default: false
+
+  ecplus.view.other:
+    description: Erlaubt Zugriff auf die Enderchest anderer Spieler
+    default: op
+
+  ecplus.reload:
+    description: Reloadet das Plugin
+    default: op

@@ -1,0 +1,7 @@
+inventory_title: "ECPlus | %player% | Oldal %page%"
+nav_back: "§c◀"
+nav_next: "§a▶"
+page_icon: "§bOldal %page%"
+no_permission: "§cNincs jogosultságod!"
+player_not_found: "§cA játékos nem található!"
+page_invalid: "§cÉrvénytelen oldalszám!"

@@ -1,0 +1,7 @@
+inventory_title: "ECPlus | %player% | Σελίδα %page%"
+nav_back: "§c◀"
+nav_next: "§a▶"
+page_icon: "§bΣελίδα %page%"
+no_permission: "§cΔεν έχεις δικαίωμα!"
+player_not_found: "§cΟ παίκτης δεν βρέθηκε!"
+page_invalid: "§cΜη έγκυρος αριθμός σελίδας!"

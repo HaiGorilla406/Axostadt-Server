@@ -1,0 +1,7 @@
+inventory_title: "ECPlus | %player% | Page %page%"
+nav_back: "§c◀"
+nav_next: "§a▶"
+page_icon: "§bPage %page%"
+no_permission: "§cVous n'avez pas la permission!"
+player_not_found: "§cJoueur introuvable!"
+page_invalid: "§cNuméro de page invalide!"

@@ -1,0 +1,7 @@
+inventory_title: "ECPlus | %player% | Strona %page%"
+nav_back: "§c◀"
+nav_next: "§a▶"
+page_icon: "§bStrona %page%"
+no_permission: "§cNie masz uprawnień!"
+player_not_found: "§cNie znaleziono gracza!"
+page_invalid: "§cNieprawidłowy numer strony!"

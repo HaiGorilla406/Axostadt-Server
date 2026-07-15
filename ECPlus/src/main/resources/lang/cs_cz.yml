@@ -1,0 +1,7 @@
+inventory_title: "ECPlus | %player% | Stránka %page%"
+nav_back: "§c◀"
+nav_next: "§a▶"
+page_icon: "§bStránka %page%"
+no_permission: "§cNemáš oprávnění!"
+player_not_found: "§cHráč nenalezen!"
+page_invalid: "§cNeplatné číslo stránky!"

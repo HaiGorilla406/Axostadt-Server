@@ -1,0 +1,7 @@
+inventory_title: "ECPlus | %player% | עמוד %page%"
+nav_back: "§c◀"
+nav_next: "§a▶"
+page_icon: "§bעמוד %page%"
+no_permission: "§cאין לך הרשאה!"
+player_not_found: "§cהשחקן לא נמצא!"
+page_invalid: "§cמספר עמוד לא תקין!"

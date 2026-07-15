@@ -1,0 +1,7 @@
+inventory_title: "ECPlus | %player% | ページ %page%"
+nav_back: "§c◀"
+nav_next: "§a▶"
+page_icon: "§bページ %page%"
+no_permission: "§c権限がありません!"
+player_not_found: "§cプレイヤーが見つかりません!"
+page_invalid: "§c無効なページ番号です!"
