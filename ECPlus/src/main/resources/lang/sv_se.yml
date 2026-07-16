@@ -1,7 +1,0 @@
-inventory_title: "ECPlus | %player% | Sida %page%"
-nav_back: "§c◀"
-nav_next: "§a▶"
-page_icon: "§bSida %page%"
-no_permission: "§cDu har inte behörighet!"
-player_not_found: "§cSpelare hittades inte!"
-page_invalid: "§cOgiltigt sidnummer!"

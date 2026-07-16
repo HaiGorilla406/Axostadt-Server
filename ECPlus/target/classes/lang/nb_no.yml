@@ -1,7 +1,0 @@
-inventory_title: "ECPlus | %player% | Side %page%"
-nav_back: "§c◀"
-nav_next: "§a▶"
-page_icon: "§bSide %page%"
-no_permission: "§cDu har ikke tillatelse!"
-player_not_found: "§cSpiller ikke funnet!"
-page_invalid: "§cUgyldig sidenummer!"

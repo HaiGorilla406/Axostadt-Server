@@ -1,7 +1,0 @@
-inventory_title: "ECPlus | %player% | Сторінка %page%"
-nav_back: "§c◀"
-nav_next: "§a▶"
-page_icon: "§bСторінка %page%"
-no_permission: "§cУ вас немає дозволу!"
-player_not_found: "§cГравця не знайдено!"
-page_invalid: "§cНеправильний номер сторінки!"

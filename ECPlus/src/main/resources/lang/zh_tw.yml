@@ -1,7 +1,0 @@
-inventory_title: "ECPlus | %player% | 頁面 %page%"
-nav_back: "§c◀"
-nav_next: "§a▶"
-page_icon: "§b頁面 %page%"
-no_permission: "§c你沒有權限!"
-player_not_found: "§c找不到玩家!"
-page_invalid: "§c無效的頁碼!"

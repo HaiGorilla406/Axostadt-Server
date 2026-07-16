@@ -1,7 +1,0 @@
-inventory_title: "ECPlus | %player% | Seite %page%"
-nav_back: "§c◀"
-nav_next: "§a▶"
-page_icon: "§bSeite %page%"
-no_permission: "§cDu hast keine Berechtigung!"
-player_not_found: "§cSpieler wurde nicht gefunden!"
-page_invalid: "§cUngültige Seitenzahl!"

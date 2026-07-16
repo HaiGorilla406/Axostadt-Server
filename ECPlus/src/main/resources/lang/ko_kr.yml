@@ -1,7 +1,0 @@
-inventory_title: "ECPlus | %player% | 페이지 %page%"
-nav_back: "§c◀"
-nav_next: "§a▶"
-page_icon: "§b페이지 %page%"
-no_permission: "§c권한이 없습니다!"
-player_not_found: "§c플레이어를 찾을 수 없습니다!"
-page_invalid: "§c잘못된 페이지 번호입니다!"

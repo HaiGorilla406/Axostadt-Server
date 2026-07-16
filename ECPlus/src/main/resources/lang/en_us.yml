@@ -1,7 +1,0 @@
-inventory_title: "ECPlus | %player% | Page %page%"
-nav_back: "§c◀"
-nav_next: "§a▶"
-page_icon: "§bPage %page%"
-no_permission: "§cYou don't have permission!"
-player_not_found: "§cPlayer not found!"
-page_invalid: "§cInvalid page number!"
